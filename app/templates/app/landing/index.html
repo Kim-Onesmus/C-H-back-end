@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page</title>
+    <link href="{% static 'css/landing/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/landing/css/landing-page.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/landing/css/styles.css' %}">
+    <link href="{% static 'css/landing/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        .blink {
+            animation: blinker 3s step-start infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav style="padding: 10px;" class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="font-size: 25px;" class="navbar-brand topnav" href="{% url 'landingPage' %}">HOME</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button style="background-color: white; font-size: 20px;" class="button btn btn-outline-primary mr-4" data-modal="modalOne">Contact</button>
+                    <li>
+                        <button style="background-color: white; font-size: 20px;" class="button btn btn-outline-primary mr-4" data-modal="modalTwo">Help</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <div style="margin-top: 60px;" id="modalOne" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <span style="font-size: 50px; color: red;" class="close">&times;</span><br><br>
+                <form action="">
+                    <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Contact Us Through</u></h4>
+                    <p>You can reach us through a Call, Email, WhatsApp or Telegram <br>
+                        The ICONS will direct you to all these
+                    </p>
+                    <table id="zero_config" class="table table-striped no-wrap">
+                        <thead>
+                            <tr style="color: black;">
+                            <tr style="color: black;">
+                                <th>Call Us</th>
+                                <td><a style="font-size: 20px;" href="tel:0792613079"><i class="fa fa-phone"></i></a>
+                                </td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>Email Us</th>
+                                <td><a style="font-size: 20px;" href="mailto:kimonesmuske@gmail.com"><i
+                                            class="fa fa-envelope"></i></a></td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>WhatsApp Us</th>
+                                <td><a style="font-size: 20px;" href="https://wa.link/vctkyy"><i
+                                            class="fab fa-whatsapp"></i></a></td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>Telegram</th>
+                                <td><a style="font-size: 20px;" href="https://t.me/Onesmus Kimanzi"><i
+                                            class="fab fa-telegram"></i></a></td>
+                            </tr>
+                            </tr>
+                        </thead>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 70px;" id="modalTwo" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <span style="font-size: 50px; color: red;" class="close">&times;</span><br><br>
+                <form method="post" class="text-dark" action="">
+                    <!-- {% csrf_token %} -->
+                    <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Help Line</u></h4>
+                    <p>
+                        Our help line is: <span class="blink"
+                            style="font-size: 20px;color:dodgerblue;animation: blinker 1s linear infinite;">
+                            0792613079 <br></span>
+                        To make a call click <a style="font-size: 20px;" href="tel:0792613079">0792613079</i></a>
+                    </p>
+                    <table id="zero_config" class="table table-striped no-wrap text-dark">
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Welcome</h1>
+                        <h3>to our Academy and Church</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="{% url 'academyHome' %}" class="btn btn-default btn-lg">
+                                    <span class="network-name">Indangalasia <br> lights <br> Academy</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'churchHome' %}" class="btn btn-default btn-lg">
+                                    <span class="network-name">Ambassadors of <br> The Living Christ <br>
+                                        Sanctuary</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+    <a name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Indangalasia lights Academy</h2>
+                    <p class="lead">
+                        <a href="">Unlock Your Potential at Indangalasia Lights Academy</a><br><br>
+                        Are you ready to embark on a transformative educational journey?
+                        Look no further than Indangalasia Lights Academy,
+                        where we ignite brilliance and empower students to shine brightly in their chosen fields.
+                    </p>
+                    <button style="float: right; border: 2px solid black;padding: 10px;background-color: cyan;">
+                        <a style="text-decoration: none;color: black;" href="">Visit Academy</a></button>
+                </div><br><br>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="{% static 'images/landing/img/image.jpg' %}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <section id="imgages-carousel">
+                    <div class="img-carousel-container">
+                        <p style="text-align: center;font-size: 25px;">Our School Garalley</p>
+                        <div class="img-carousel">
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>1/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>2/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>3/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>4/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/image.jpg' %}">
+                                <p>5/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/image.jpg' %}">
+                                <p>6/6</p>
+                            </div>
+                        </div>
+                        <button id="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                        <button id="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Ambassadors of The Living Christ Sanctuary</h2>
+                    <p class="lead">
+                        Experience the Power of Faith at <a href="{% url 'churchHome' %}">Ambassadors of The Living Christ
+                            Sanctuary!</a><br><br>
+
+                        Searching for a spiritual home where you can deepen your connection with God and find a
+                        supportive community?
+                        Look no further than Ambassadors of The Living Christ Sanctuary a place where hearts are
+                        transformed,
+                        lives are enriched, and purpose is discovered.
+                    </p>
+                    <button style="float: right; border: 2px solid black;padding: 10px;background-color: cyan;">
+                        <a style="text-decoration: none;color: black;" href="{% url 'churchHome' %}">Visit Church</a></button>
+                </div><br><br>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="{% static 'images/landing/img/images.jpg' %}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <section id="imgages-carousel">
+                    <div class="img-carousel-container">
+                        <p style="text-align: center;font-size: 25px;">Our School Garalley</p>
+                        <div class="img-carousel">
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>1/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>2/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>3/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/images.jpg' %}">
+                                <p>4/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/image.jpg' %}">
+                                <p>5/6</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'images/landing/img/image.jpg' %}">
+                                <p>6/6</p>
+                            </div>
+                        </div>
+                        <button id="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                        <button id="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <a name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+            <p style="font-size: 18px;">Quick Links</p>
+            <ul style="font-size: 15px;" class="list-inline">
+                <li>
+                    <a style="color: black;" href="{% url 'academyHome' %}">Indangalasia lights Academy</a>
+                </li><br>
+                <li>
+                    <a style="color: black;" href="{% url 'churchHome' %}">Ambassadors of The Living Christ Sanctuary</a>
+                </li><br>
+            </ul>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Contact us Through:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a href="" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>
+                                <span class="network-name">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i>
+                                <span class="network-name">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i>
+                                <span class="network-name">You Tube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><br><br><br><br>
+        <p style="text-align: center;font-size: 20px;padding-bottom: 0%;margin-bottom: 0%;">Copyright &copy; 2023. All
+            Rights Reserved.
+            <span>Designed and Developed by <a style="color: red;"
+                    href="onesmuskimanzi.pythonanywhere.com">KimTech</a></span>
+        </p>
+    </div>
+    <script src="{% static 'js/landing/js/jquery.js' %}"></script>
+    <script src="{% static 'js/landing/js/bootstrap.min.js' %}"></script>
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.getAttribute("data-modal");
+                document.getElementById(modal).style.display = "block";
+            };
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function (btn) {
+            btn.onclick = function () {
+                let modal = btn.closest(".modal");
+                modal.style.display = "none";
+            };
+        });
+        window.onclick = function (event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        };
+    </script>
+    <script>
+        var message_ele = document.getElementById("floating");
+        setTimeout(function () {
+            message_ele.style.display = "none"
+        }, 30000);
+    </script>
+    <script>
+        const carousel = document.querySelector('.img-carousel');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        let carsouselImages = document.querySelectorAll('.img-carousel div');
+
+        //Next Carousel
+        const nextCarousel = () => {
+            if (carsouselImages[carsouselImages.length - 1]) {
+                carousel.scrollTo(0, 0);
+            }
+            carousel.scrollBy(300, 0);
+        };
+
+        nextBtn.addEventListener('click', e => {
+            nextCarousel();
+        });
+
+        //Prev Carousel
+        const prevCarousel = () => {
+            if (carsouselImages[0]) {
+                carousel.scrollTo(4800, 0);
+            }
+            carousel.scrollBy(-300, 0);
+        };
+
+        prevBtn.addEventListener('click', e => {
+            prevCarousel();
+        });
+
+
+        // Auto carousel
+        const auto = true; // Auto scroll
+        const intervalTime = 5000;
+        let sliderInterval;
+
+
+        if (auto) {
+            sliderInterval = setInterval(nextCarousel, intervalTime);
+        };
+
+        carousel.addEventListener('mouseover', (stopInterval) => {
+            clearInterval(sliderInterval);
+        });
+
+        carousel.addEventListener('mouseleave', (startInterval) => {
+            if (auto) {
+                sliderInterval = setInterval(nextCarousel, intervalTime);
+            }
+        });
+
+        //for mobile events
+        carousel.addEventListener('touchstart', (stopIntervalT) => {
+            clearInterval(sliderInterval);
+        });
+        carousel.addEventListener('touchend', (startIntervalT) => {
+            if (auto) {
+                sliderInterval = setInterval(nextCarousel, intervalTime);
+            }
+        });
+
+        //Debounce
+        var previousCall;
+        window.addEventListener('resize', () => {
+            if (previousCall >= 0) {
+                clearTimeout(previousCall);
+            }
+            previousCall = setTimeout(() => {
+                carousel.scrollBy(-300, 0);
+            }, 200);
+        }); 
+    </script>
+
+</body>
+
+</html>
